@@ -1,0 +1,239 @@
+:root {
+    --primary-color: #0056b3;
+    --primary-dark: #003d82;
+    --secondary-color: #ffc107;
+    --text-color: #2d3748;
+    --text-muted: #718096;
+    --bg-light: #f7fafc;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background-color: #edf2f7; /* Fundo cinza claro para destacar a moldura do telemóvel */
+    line-height: 1.6;
+}
+
+/* Botão de Alternância no Cabeçalho */
+.btn-toggle {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-toggle:hover {
+    opacity: 0.9;
+}
+
+/* Modo Desktop (Padrão) */
+.desktop-mode {
+    width: 100%;
+    background-color: var(--white);
+}
+
+/* Modo Mobile Simulado com Scroll Interno */
+.mobile-simulation {
+    max-width: 380px;            /* Largura real de um telemóvel */
+    height: 680px;               /* Altura fixa da tela do telemóvel */
+    margin: 2rem auto;           /* Centraliza o telemóvel na tela do PC */
+    border: 14px solid #1a202c;  /* Borda grossa simulando a carcaça do aparelho */
+    border-radius: 40px;         /* Cantos arredondados do telemóvel */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35); /* Sombra realista 3D */
+    background-color: var(--white);
+    overflow-y: auto;            /* CRUCIAL: Cria a barra de rolagem interna apenas para este bloco */
+    overflow-x: hidden;          
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Secção Hero */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white);
+    text-align: center;
+    padding: 3.5rem 1rem;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: #1a202c;
+    padding: 0.65rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Secções Gerais */
+.section {
+    padding: 2.5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Grelhas adaptadas para caber perfeitamente no telemóvel simulado */
+.services-grid, .card-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Empilha os elementos em coluna única no modo mobile */
+    gap: 1.25rem;
+}
+
+.service-box {
+    background: var(--bg-light);
+    padding: 1.25rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.service-box h4 {
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+}
+
+.service-box p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.books-section {
+    background-color: var(--bg-light);
+}
+
+.card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.card img.card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body h4 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    color: var(--primary-dark);
+}
+
+.card-body p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.btn-card {
+    display: block;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #1a202c;
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+.footer-content p {
+    font-size: 0.85rem;
+}

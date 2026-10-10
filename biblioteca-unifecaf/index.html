@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital - UniFECAF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho Fixo com o Botão de Alternância -->
+    <header class="header">
+        <div class="container nav-container">
+            <h1 class="logo">Uni<span>FECAF</span> Biblioteca</h1>
+            <nav class="nav">
+                <a href="#home">Início</a>
+                <a href="#livros">Acervo</a>
+                <button id="toggle-view-btn" class="btn-toggle">Modo Mobile</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contentor que alterna entre largura total e moldura de celular -->
+    <div id="site-wrapper" class="desktop-mode">
+
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h2>Biblioteca Digital UniFECAF</h2>
+                <p>Conhecimento sem barreiras. Acesse livros, artigos e materiais acadêmicos de onde estiver.</p>
+                <a href="#livros" class="btn">Explorar Acervo Digital</a>
+            </div>
+        </section>
+
+        <section id="servicos" class="container section">
+            <h3 class="section-title">Como Podemos Ajudar?</h3>
+            <div class="services-grid">
+                <div class="service-box">
+                    <h4>📖 Empréstimo Digital</h4>
+                    <p>Reserve e leia obras completas diretamente no seu dispositivo.</p>
+                </div>
+                <div class="service-box">
+                    <h4>🔍 Normas ABNT</h4>
+                    <p>Guias práticos e atualizados para formatação de trabalhos.</p>
+                </div>
+                <div class="service-box">
+                    <h4>💡 Suporte Acadêmico</h4>
+                    <p>Atendimento especializado com bibliotecários.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="livros" class="books-section">
+            <div class="container section">
+                <h3 class="section-title">Livros em Destaque</h3>
+                <div class="card-grid">
+                    
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=500&q=80" alt="Engenharia de Software" class="card-img">
+                        <div class="card-body">
+                            <h4>Engenharia de Software</h4>
+                            <p>Conceitos fundamentais para o desenvolvimento moderno.</p>
+                            <a href="#" class="btn-card">Acessar Obra</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=500&q=80" alt="Banco de Dados" class="card-img">
+                        <div class="card-body">
+                            <h4>Banco de Dados</h4>
+                            <p>Modelagem relacional e SQL avançado.</p>
+                            <a href="#" class="btn-card">Acessar Obra</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?auto=format&fit=crop&w=500&q=80" alt="Design Web Responsivo" class="card-img">
+                        <div class="card-body">
+                            <h4>Design Web Responsivo</h4>
+                            <p>Criando interfaces acessíveis e adaptáveis.</p>
+                            <a href="#" class="btn-card">Acessar Obra</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container footer-content">
+                <p>&copy; 2026 Centro Universitário UniFECAF. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Script JavaScript para alternar a classe e o texto do botão -->
+    <script>
+        const btnToggle = document.getElementById('toggle-view-btn');
+        const wrapper = document.getElementById('site-wrapper');
+
+        btnToggle.addEventListener('click', () => {
+            if (wrapper.classList.contains('desktop-mode')) {
+                wrapper.classList.remove('desktop-mode');
+                wrapper.classList.add('mobile-simulation');
+                btnToggle.textContent = 'Modo Desktop';
+            } else {
+                wrapper.classList.remove('mobile-simulation');
+                wrapper.classList.add('desktop-mode');
+                btnToggle.textContent = 'Modo Mobile';
+            }
+        });
+    </script>
+</body>
+</html>
